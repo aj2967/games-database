@@ -1,0 +1,11 @@
+.esrb {
+    width: 100%;
+    // display: flex;
+    justify-content: space-between;
+
+    img {
+        width: 50%;
+        max-width: 75px;
+        margin-top: .5rem;
+    }
+}
