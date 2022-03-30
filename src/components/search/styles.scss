@@ -1,0 +1,17 @@
+@import '../../assets/styles/variables';
+
+.search {
+    height: 200px;
+    width: 100%;
+    background: $card;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .search-form {
+        width: 60%;
+        input {
+            width: 100%;
+        }
+    }
+}
