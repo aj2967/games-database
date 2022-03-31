@@ -12,8 +12,21 @@
   }
   .game-cover-container {
     // width: 250px;
+    margin: 0;
     img {
       border-radius: 0.3rem;
+    }
+  }
+  .game-link {
+      margin-top: 0;
+      a {
+        background: $primary;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        border-radius: .25rem;
+        padding: 1rem;
     }
   }
   .esrb-rating {
@@ -30,9 +43,11 @@
 .game-detail {
   flex: 1;
   padding: 1rem;
-
+    > div {
+        margin: 2rem 0;
+    }
   .game-overview {
-    // border: 2px solid white;
+    margin-top: 0;
 
     .game-title {
       margin-bottom: 1rem;
@@ -60,7 +75,7 @@
         }
         .user-ratings {
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           align-items: center;
         }
       }

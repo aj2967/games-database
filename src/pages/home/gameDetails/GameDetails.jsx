@@ -10,6 +10,7 @@ import './styles.scss'
 import { getByPlaceholderText } from '@testing-library/react';
 import ESRB from './esrb/ESRB';
 import Platforms from './platforms/Platforms';
+import Gallery from './gallery/Gallery';
 
 
 const GameDetails = () => {
@@ -46,18 +47,19 @@ const GameDetails = () => {
         /* background: radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(40, 41, 47,1) 100%), url(${game?.background_image_additional}); */
         background: linear-gradient(0deg, rgba(40,41,47,1) 10%, rgba(40,41,47,0.7) 100%), url(${game?.background_image_additional});
         min-height: 100vh;
+        max-height: 100vh;
         height: 100%;
         min-width: 100%;
         position: absolute;
         left: 0;
         top: 0;
         right: 0;
-        bottom: 0;
+        /* bottom: 0; */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        display: flex;
-
+        /* display: flex; */
+        z-index: -100;
     `
 
     return (
@@ -68,8 +70,8 @@ const GameDetails = () => {
                         <div className='game-cover-container'>
                             <img src={game?.background_image} alt="" />
                         </div>
-                        <div>
-                            <a href={game?.website}>
+                        <div className='game-link'>
+                            <a href={game?.website} target='_blank'>
                                 Go To Website
                             </a>
                         </div>
@@ -116,12 +118,11 @@ const GameDetails = () => {
                             <div className='game-rank'>
                                 <div className='game-rank-left'>
                                     {/* achievments count */}
-                                    <div>
-                                        {/* rating */}
+                                    {/* <div>
                                         <AiOutlineStar color='white' />
 
-                                    </div>
-                                    <div>
+                                    </div> */}
+                                    {/* <div>
                                         <table>
                                             <tr>
                                                 <td>Beaten</td>
@@ -138,9 +139,8 @@ const GameDetails = () => {
                                                 <td>{game?.added_by_status?.toplay}</td>
                                             </tr>
                                         </table>
-                                    </div>
+                                    </div> */}
                                     <div className='user-ratings'>
-                                        <h4>What players think</h4>
                                         {game?.ratings?.map(rating => (
                                             <div>
                                                 <b>{rating?.title}</b>
@@ -162,7 +162,6 @@ const GameDetails = () => {
                                 </div>
                 
                                 <div className='game-rank-right'>
-                                    {/* right side div */}
                                     <CircularProgressbar 
                                         value={game?.metacritic === undefined || null ? 0 : game?.metacritic} 
                                         text={game?.metacritic === undefined || null ? `N/A` : `${game?.metacritic}%`} 
@@ -175,13 +174,19 @@ const GameDetails = () => {
                             <h2>About {game?.name}</h2>
                             <div dangerouslySetInnerHTML={gameDescription()} />
                         </div>
-                    </div>
+                        
+                        <div>
+                            {/* <Gallery id={game?.id} /> */}
+                        </div>
 
+
+
+
+                    </div>
                 </div>
             </GameContainer>
 
-            <div className="container">
-                {/* Gallery screenshots */}
+
 
                 {/* dlc/etc */}
                 
@@ -200,8 +205,6 @@ const GameDetails = () => {
                 {/* Game suggestions */}
 
                 {/* reviews */}
-
-            </div>
         </div>
     )
 }
