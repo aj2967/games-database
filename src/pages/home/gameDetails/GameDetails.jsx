@@ -11,6 +11,7 @@ import { getByPlaceholderText } from '@testing-library/react';
 import ESRB from './esrb/ESRB';
 import Platforms from './platforms/Platforms';
 import Gallery from './gallery/Gallery';
+import AdditionalInfo from './additionalInfo/AdditionalInfo';
 
 
 const GameDetails = () => {
@@ -72,7 +73,7 @@ const GameDetails = () => {
                         </div>
                         <div className='game-link'>
                             <a href={game?.website} target='_blank'>
-                                Go To Website
+                                Play
                             </a>
                         </div>
                         <div className='esrb-rating'>
@@ -173,6 +174,10 @@ const GameDetails = () => {
                         <div className="game-description">
                             <h2>About {game?.name}</h2>
                             <div dangerouslySetInnerHTML={gameDescription()} />
+                        </div>
+                        
+                        <div>
+                            <AdditionalInfo data={game} />
                         </div>
                         
                         <div>
