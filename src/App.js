@@ -15,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path=":id" element={<GameDetails />} />
+          <Route path="/games/:id" element={<GameDetails />} />
           <Route path="/free" element={<FreeToPlay />} />
           <Route path="/giveaways" element={<Giveaways />} />
         </Routes>

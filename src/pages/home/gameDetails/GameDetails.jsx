@@ -7,11 +7,11 @@ import styled from 'styled-components';
 import { AiOutlineStar } from 'react-icons/ai'
 
 import './styles.scss'
-import { getByPlaceholderText } from '@testing-library/react';
 import ESRB from './esrb/ESRB';
 import Platforms from './platforms/Platforms';
 import Gallery from './gallery/Gallery';
 import AdditionalInfo from './additionalInfo/AdditionalInfo';
+import GameSeries from './game-series/GameSeries';
 
 
 const GameDetails = () => {
@@ -45,7 +45,6 @@ const GameDetails = () => {
     }
 
     const GameContainer = styled.div`
-        /* background: radial-gradient(circle, rgba(0,0,0,0.8) 0%, rgba(40, 41, 47,1) 100%), url(${game?.background_image_additional}); */
         background: linear-gradient(0deg, rgba(40,41,47,1) 10%, rgba(40,41,47,0.7) 100%), url(${game?.background_image_additional});
         min-height: 100vh;
         max-height: 100vh;
@@ -55,11 +54,9 @@ const GameDetails = () => {
         left: 0;
         top: 0;
         right: 0;
-        /* bottom: 0; */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        /* display: flex; */
         z-index: -100;
     `
 
@@ -150,14 +147,7 @@ const GameDetails = () => {
                                         ))}
                                     </div>
                                     <div>
-                                        {/* random details */}
-                                        {/* playtime */}
-                                        <p>{game?.playtime}</p>
-                                        {/* release date */}
-                                        <p>{game?.released}</p>
-                                        <p></p>
-                                        <p></p>
-                                        <p></p>
+
                                     </div>
 
                                 </div>
@@ -179,9 +169,13 @@ const GameDetails = () => {
                         <div>
                             <AdditionalInfo data={game} />
                         </div>
-                        
+
                         <div>
                             {/* <Gallery id={game?.id} /> */}
+                        </div>
+
+                        <div className='game-series-component'>
+                            <GameSeries id={game?.id} />
                         </div>
 
 

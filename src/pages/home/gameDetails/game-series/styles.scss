@@ -1,0 +1,38 @@
+.game-series {
+    width: 100%;
+    position: relative;
+
+    .series-carousel {
+        -webkit-box-shadow: inset 0px 0px 15px -1px rgba(0,0,0,0.6); 
+        box-shadow: inset 0px 0px 15px -1px rgba(0,0,0,0.6);
+        border-radius: .5rem;
+        padding-bottom: .5rem;
+
+        div {
+            position: relative;
+            margin-top: .5rem;
+            img {
+                position: relative;
+                border-radius: .5rem;
+            }
+            h4 {
+                background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+                transform: translateY(-30px);
+                padding: .2rem;
+                border-radius: .5rem;
+                // position: relative;
+                // max-width: 50px;
+                // display: flex;
+                // flex-wrap: wrap;
+                // bottom: 10px;
+                p {
+                    // position: absolute;
+                    // display: flex;
+                    // flex-wrap: wrap;
+                    // bottom: 0;
+                }
+            }
+        }
+    }
+}
+

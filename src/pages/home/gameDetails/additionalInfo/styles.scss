@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    padding-right: 2rem;
     div {
         display: flex;
         flex-direction: column;
