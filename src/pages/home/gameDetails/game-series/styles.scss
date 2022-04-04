@@ -14,23 +14,13 @@
             img {
                 position: relative;
                 border-radius: .5rem;
+                cursor: pointer;
             }
             h4 {
                 background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
                 transform: translateY(-30px);
                 padding: .2rem;
                 border-radius: .5rem;
-                // position: relative;
-                // max-width: 50px;
-                // display: flex;
-                // flex-wrap: wrap;
-                // bottom: 10px;
-                p {
-                    // position: absolute;
-                    // display: flex;
-                    // flex-wrap: wrap;
-                    // bottom: 0;
-                }
             }
         }
     }

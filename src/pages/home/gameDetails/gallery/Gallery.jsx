@@ -3,7 +3,6 @@ import axios from 'axios'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight} from 'react-icons/fa';
 
 import './styles.scss';
-import { buildStyles } from 'react-circular-progressbar';
 
 const Gallery = ({ id }) => {
     const [gallery, setGallery] = useState();
@@ -19,7 +18,7 @@ const Gallery = ({ id }) => {
             const res = await axios.get(`https://api.rawg.io/api/games/${id}/screenshots`, {
                 params: {
                     key: '8f8bdf81e9af4343b36cfea95f5cd267',
-                    page_size: 1
+                    // page_size: 1
                 }
             })
             console.log(res);

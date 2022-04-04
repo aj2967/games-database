@@ -21,7 +21,7 @@ const GameDetails = () => {
 
     useEffect(() => {
         getGame();
-    }, [])
+    }, [id])
 
     const getGame = async () => {
         try {
@@ -171,7 +171,7 @@ const GameDetails = () => {
                         </div>
 
                         <div>
-                            {/* <Gallery id={game?.id} /> */}
+                            <Gallery id={game?.id} />
                         </div>
 
                         <div className='game-series-component'>

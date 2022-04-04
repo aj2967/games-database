@@ -14,7 +14,10 @@ const GameSeries = ({ id }) => {
 
     useEffect(() => {
         getSeries();
-    }, [])
+        if (series?.length === 0) {
+            return null;
+        }
+    }, [id])
 
     const getSeries = async () => {
         try {
@@ -34,7 +37,7 @@ const GameSeries = ({ id }) => {
         }
     }
     return (
-        <div className='game-series'>
+        <div className={series?.length > 0 ? 'game-series' : 'hide'}>
             <h2>More From The Series</h2>
             <div className='series-carousel'>
                 <Carousel>
@@ -42,7 +45,7 @@ const GameSeries = ({ id }) => {
                         <CarouselItem key={i}>
                             <div className='game' onClick={() => navigate(`/games/${additions?.id}`)}>
                                 {<img src={additions?.background_image || missingImg} alt="" />}
-                                <h4><p>{additions?.name}</p></h4>
+                                {/* <h4>{additions?.name}</h4> */}
                             </div>
                             {/* <NavLink to={`/${additions?.id}`}>
                             </NavLink> */}
