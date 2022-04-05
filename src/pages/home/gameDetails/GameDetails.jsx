@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+// import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar';
+// import 'react-circular-progressbar/dist/styles.css';
 import axios from 'axios'
 import styled from 'styled-components';
 
-import './styles.scss'
 import ESRB from './esrb/ESRB';
 import Platforms from './platforms/Platforms';
 import Gallery from './gallery/Gallery';
 import AdditionalInfo from './additionalInfo/AdditionalInfo';
 import GameSeries from './game-series/GameSeries';
+import './styles.scss'
 
 
 const GameDetails = () => {
@@ -29,7 +29,6 @@ const GameDetails = () => {
                     key: '8f8bdf81e9af4343b36cfea95f5cd267',
                 }
             })
-            console.log(res?.data);
             setGame(res?.data)
     
         }
@@ -66,7 +65,6 @@ const GameDetails = () => {
         <div className='game-details'>
             <GameContainer>
                 <div className="container flex">
-
                     <div className='game-sidebar'>
                         <div className='game-cover-container'>
                             <img src={game?.background_image} alt="" />
@@ -113,35 +111,25 @@ const GameDetails = () => {
                                         ))}
                                     </div>
                                 </div>
-                
-                                {/* <div className='game-rank-right'> */}
-                                    {/* <CircularProgressbar 
-                                        value={game?.metacritic === undefined || null ? 0 : game?.metacritic} 
-                                        text={game?.metacritic === undefined || null ? `N/A` : `${game?.metacritic}%`}
-                                        styles={buildStyles({
-                                            strokeLinecap: 'butt',
-                                            pathColor: `rgba(23, 126, 137, ${game?.metacritic / 100})`,
-                                            textColor: '#d6d6d6',
-                                            trailColor: '#d6d6d6',
-                                            backgroundColor: '#f88',
-                                        })}
-                                    /> */}
-                                {/* </div> */}
                             </div>
                         </div>
                     
+
                         <div className="game-description">
                             <h2>About {game?.name}</h2>
                             <div dangerouslySetInnerHTML={gameDescription()} />
                         </div>
                         
+
                         <div>
                             <AdditionalInfo data={game} />
                         </div>
 
+
                         <div className='gallery-component'>
                             <Gallery id={game?.id} />
                         </div>
+
 
                         <div className='game-series-component'>
                             <GameSeries id={game?.id} />

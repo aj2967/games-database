@@ -48,7 +48,6 @@ const Home = () => {
                     ordering: orderingParam
                 }
             })
-            console.log(res);
             setGames(res?.data?.results)
             setCount(res?.data?.count)
 
@@ -63,20 +62,20 @@ const Home = () => {
 
     const handleSearch = e => {
         e.preventDefault();
-        console.log(userInput);
         setSearchParam(userInput);
     }
 
-    const handleFilterReset = () => {
-        setPageSizeParam(10);
-        setgenreParam(null);
-        setPlatformParam(null);
-        setMetacriticParam(null);
-    }
+    // const handleFilterReset = () => {
+    //     setPageSizeParam(10);
+    //     setgenreParam(null);
+    //     setPlatformParam(null);
+    //     setMetacriticParam(null);
+    // }
 
     const handlePageChange = (e, value) => {
         setPageParam(value)
     }
+    
     return (
         <div>
             <div className='search'>

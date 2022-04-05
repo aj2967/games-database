@@ -11,8 +11,6 @@ const Nav = () => {
         </div>
         <div className='links'>
           <NavLink to='/'>Games</NavLink>
-          {/* <NavLink to='/free'>Free to play</NavLink>
-          <NavLink to='/giveaways'>Giveaways</NavLink> */}
         </div>
       </nav>
     </header>

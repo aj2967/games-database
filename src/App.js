@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { ThemeProvider, useTheme, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import Nav from "./components/navigation/Nav";
 import Home from "./pages/home/Home";
@@ -9,7 +9,7 @@ const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#177e898f'
+      main: '#177e89'
     },
   },
 });
@@ -23,7 +23,6 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path=":id" element={<GameDetails />} />
-            <Route path="/games/:id" element={<GameDetails />} />
           </Routes>
         </div>
       </ThemeProvider>

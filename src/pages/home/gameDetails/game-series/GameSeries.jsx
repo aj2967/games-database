@@ -24,11 +24,8 @@ const GameSeries = ({ id }) => {
             const res = await axios.get(`https://api.rawg.io/api/games/${id}/additions`, {
                 params: {
                     key: '8f8bdf81e9af4343b36cfea95f5cd267',
-                    // page_size: 1,
-                    // page: 1
                 }
             })
-            console.log(res?.data?.results);
             setSeries(res?.data?.results)
     
         }
@@ -47,8 +44,6 @@ const GameSeries = ({ id }) => {
                                 {<img src={additions?.background_image || missingImg} alt="" />}
                                 <h4>{additions?.name}</h4>
                             </div>
-                            {/* <NavLink to={`/${additions?.id}`}>
-                            </NavLink> */}
                         </CarouselItem>
                     ))}
                 </Carousel>
