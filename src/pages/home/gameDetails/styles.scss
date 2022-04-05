@@ -4,10 +4,6 @@
   position: relative;
 }
 
-.game-detail-cover-container {
-  display: none;
-}
-
 .game-sidebar {
   padding: 1rem;
   width: 30%;
@@ -44,7 +40,7 @@
 }
 
 .game-detail {
-  flex: 1;
+  width: 70%;
   padding: 1rem;
     > div {
       margin: 2rem 0;
@@ -112,6 +108,10 @@
       line-height: 1.6rem;
     }
   }
+  // .gallery-component {
+  //   height: 600px;
+  //   width: 100%;
+  // }
   .game-series-component {
       width: 100%;
   }
@@ -135,6 +135,10 @@
     div {
       margin: 1rem 0;
     }
+  }
+
+  .game-detail {
+    width: 100%;
   }
 
   .game-detail-cover-container {
