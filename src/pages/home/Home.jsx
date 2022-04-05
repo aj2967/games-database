@@ -33,6 +33,13 @@ const Home = () => {
     useEffect(() => {
         setPageParam(1)
     }, [searchParam, pageSizeParam, genreParam, platformParam, metacriticParam, orderingParam])
+    
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, [pageParam])
 
     const getGames = async () => {
         try {
