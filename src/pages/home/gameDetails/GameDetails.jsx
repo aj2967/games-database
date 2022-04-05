@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles  } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import axios from 'axios'
 import styled from 'styled-components';
-import { AiOutlineStar } from 'react-icons/ai'
 
 import './styles.scss'
 import ESRB from './esrb/ESRB';
@@ -31,13 +30,16 @@ const GameDetails = () => {
                 }
             })
             console.log(res?.data);
-            // console.log(res?.data?.results)
             setGame(res?.data)
     
         }
         catch (error) {
             console.log(error);
         }
+    }
+
+    const capitalize = word => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
     }
 
     const gameDescription = () => {
@@ -64,14 +66,13 @@ const GameDetails = () => {
         <div className='game-details'>
             <GameContainer>
                 <div className="container flex">
+
                     <div className='game-sidebar'>
                         <div className='game-cover-container'>
                             <img src={game?.background_image} alt="" />
                         </div>
-                        <div className='game-link'>
-                            <a href={game?.website} target='_blank'>
-                                Play
-                            </a>
+                        <div className={game?.website === null ? 'hide' : 'game-link'}>
+                            <a href={game?.website} target='_blank'>Visit Site</a>
                         </div>
                         <div className='esrb-rating'>
                             <div>
@@ -83,81 +84,49 @@ const GameDetails = () => {
                         </div>
                         <div className='tags'>
                             <h4>Tags</h4>
-                            {/* tags array */}
                             {game?.tags.map(tag => (
                                 <button key={tag.id}>{tag.name}</button>
                             ))}
                         </div>
-                        <div className='stats'>
-                                {/* playtime */}
-                                {/* release date */}
-                        </div>
-                        <div>
-                            {/* puchase links */}
-                                {/* website */}
-                                {/* stores array */}
-                        </div>
-
                     </div>
+
+                    
                     <div className="game-detail">
                         <div className="game-overview">
-                
                             <div className='game-title'>
-                                {/* pagination */}
                                 <small>
-                                    <Link to='/'>Home</Link>
+                                    <Link to='/'>Games</Link>
                                     &gt;
                                     <i>{game?.name}</i>
                                 </small>
-                                {/* title */}
                                 <h1>{game?.name}</h1>
                             </div>
                     
                             <div className='game-rank'>
                                 <div className='game-rank-left'>
-                                    {/* achievments count */}
-                                    {/* <div>
-                                        <AiOutlineStar color='white' />
-
-                                    </div> */}
-                                    {/* <div>
-                                        <table>
-                                            <tr>
-                                                <td>Beaten</td>
-                                                <td>Dropped</td>
-                                                <td>Owned</td>
-                                                <td>Playing</td>
-                                                <td>To Play</td>
-                                            </tr>
-                                            <tr>
-                                                <td>{game?.added_by_status?.beaten}</td>
-                                                <td>{game?.added_by_status?.dropped}</td>
-                                                <td>{game?.added_by_status?.owned}</td>
-                                                <td>{game?.added_by_status?.playing}</td>
-                                                <td>{game?.added_by_status?.toplay}</td>
-                                            </tr>
-                                        </table>
-                                    </div> */}
                                     <div className='user-ratings'>
-                                        {game?.ratings?.map(rating => (
-                                            <div>
-                                                <b>{rating?.title}</b>
+                                        {game?.ratings?.map((rating, i) => (
+                                            <div key={i}>
+                                                <b>{capitalize(rating?.title)}</b>
                                                 <p>{rating?.percent}%</p>
                                             </div>
                                         ))}
                                     </div>
-                                    <div>
-
-                                    </div>
-
                                 </div>
                 
-                                <div className='game-rank-right'>
-                                    <CircularProgressbar 
+                                {/* <div className='game-rank-right'> */}
+                                    {/* <CircularProgressbar 
                                         value={game?.metacritic === undefined || null ? 0 : game?.metacritic} 
-                                        text={game?.metacritic === undefined || null ? `N/A` : `${game?.metacritic}%`} 
-                                    />
-                                </div>
+                                        text={game?.metacritic === undefined || null ? `N/A` : `${game?.metacritic}%`}
+                                        styles={buildStyles({
+                                            strokeLinecap: 'butt',
+                                            pathColor: `rgba(23, 126, 137, ${game?.metacritic / 100})`,
+                                            textColor: '#d6d6d6',
+                                            trailColor: '#d6d6d6',
+                                            backgroundColor: '#f88',
+                                        })}
+                                    /> */}
+                                {/* </div> */}
                             </div>
                         </div>
                     
@@ -170,40 +139,16 @@ const GameDetails = () => {
                             <AdditionalInfo data={game} />
                         </div>
 
-                        <div>
+                        <div className='gallery-component'>
                             <Gallery id={game?.id} />
                         </div>
 
                         <div className='game-series-component'>
                             <GameSeries id={game?.id} />
                         </div>
-
-
-
-
                     </div>
                 </div>
             </GameContainer>
-
-
-
-                {/* dlc/etc */}
-                
-                {/* additional info */}
-                
-                {/* Gallery screenshots */}
-
-                {/* publisher section */}
-                    {/* publisher */}
-                    {/* creaters count */}
-                    {/* developers array */}
-                    {/* genres array */}
-                    {/*  */}
-                    {/*  */}
-
-                {/* Game suggestions */}
-
-                {/* reviews */}
         </div>
     )
 }

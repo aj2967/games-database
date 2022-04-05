@@ -43,9 +43,9 @@ const GameSeries = ({ id }) => {
                 <Carousel>
                     {series?.map((additions, i) => (
                         <CarouselItem key={i}>
-                            <div className='game' onClick={() => navigate(`/games/${additions?.id}`)}>
+                            <div className='game' onClick={() => navigate(`/${additions?.id}`)}>
                                 {<img src={additions?.background_image || missingImg} alt="" />}
-                                {/* <h4>{additions?.name}</h4> */}
+                                <h4>{additions?.name}</h4>
                             </div>
                             {/* <NavLink to={`/${additions?.id}`}>
                             </NavLink> */}

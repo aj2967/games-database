@@ -161,7 +161,7 @@ export const pageSize = [
     {
         "id": 1,
         "name": "2",
-        "value": 2
+        "value": 10
     },
     {
         "id": 2,
@@ -178,12 +178,12 @@ export const pageSize = [
 export const ordering = [
     {
         "id": 1,
-        "name": "Name &#8595;",
+        "name": "Name Desc",
         "value": "name"
     },
     {
         "id": 2,
-        "name": "Name &#8593;",
+        "name": "Name Asc",
         "value": "-name"
     },
     {

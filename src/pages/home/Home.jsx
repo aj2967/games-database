@@ -17,7 +17,7 @@ const Home = () => {
     const [totalPages, setTotalPages] = useState(1)
     
     const [searchParam, setSearchParam] = useState(null)
-    const [pageSizeParam, setPageSizeParam] = useState(2)
+    const [pageSizeParam, setPageSizeParam] = useState(10)
     const [pageParam, setPageParam] = useState(1)
     const [genreParam, setgenreParam] = useState(null)
     const [platformParam, setPlatformParam] = useState(null)
@@ -26,8 +26,7 @@ const Home = () => {
 
     
     useEffect(() => {
-        // getGames();
-        console.log(genreParam)
+        getGames();
     },
     [searchParam, genreParam, platformParam, metacriticParam, pageParam, pageSizeParam, orderingParam])
 
@@ -116,8 +115,12 @@ const Home = () => {
             </div>
 
 
+            <div className='count'>
+                {count && <h2>{count} Games Found</h2>}
+            </div>
+
+
             <div className='game-container'>
-            {count && <h2>Count: {count}</h2>}
                 {!games ? <Loading /> : (
                     games?.map(game => (
                         <li key={game?.id}>

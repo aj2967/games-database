@@ -33,6 +33,12 @@
   margin: 2rem 0;
 }
 
+.count {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 1rem;
+}
+
 .game-container {
     width: 100%;
     display: flex;
@@ -51,6 +57,11 @@
       position: relative;
       width: 250px;
       height: 400px;
+      transition: all .2s ease;
+      &:hover {
+        // transform: scale(1.02);
+        box-shadow: 0 0 10px 10px rgba(0,0,0,.25);
+      }
       img {
         pointer-events: none;
         position: absolute;
@@ -61,10 +72,10 @@
         object-position: center;
       }
       h4 {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          padding: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 10px;
       }
     }
   }

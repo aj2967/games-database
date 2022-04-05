@@ -7,44 +7,16 @@ import Select from '@mui/material/Select';
 
 const FilterPanel = ({filterName, options, selectedOption }) => {
 
-    // const [selected, setSelected] = useState()
-
-    // const handleResetSelect = () => {
-
-    // }
-    // useEffect(() => {
-    //     handleResetSelect();
-    // }, [selectedOption])
-    
-    // const handleSelectReset = (e) => {
-    //     setSelected(null)
-        
-    // }
-
     return (
         <div>
-            {/* <div className='input-group'>
-                <label htmlFor="select-filter"><p>{filterName}</p></label>
-                <select 
-                    id="select-filter"
-                    // value={selected} 
-                    onChange={e => selectedOption(e.currentTarget.value)}
-                >
-                    <option value=''>Please Select</option>
-                    {options.map(option => (
-                        <option key={option.value} value={option.value}>{option.name}</option>
-                    ))}
-                </select>
-            </div> */}
-
             <div>
                 <Box sx={{ minWidth: 120 }}>
-                    <FormControl fullWidth variant='filled'>
+                    <FormControl fullWidth >
                         <InputLabel id="simple-select-label">{filterName}</InputLabel>
                         <Select
                             labelId="simple-select-label"
                             id="simple-select"
-                            label={filterName}
+                            label={`${filterName}.`}
                             onChange={e => selectedOption(e.target.value)}
                         >
                             <MenuItem value=''>Please Select</MenuItem>
