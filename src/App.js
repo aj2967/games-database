@@ -22,6 +22,7 @@ function App() {
         <div className="app-content">
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/games-database" element={<Home />} />
             <Route path=":id" element={<GameDetails />} />
           </Routes>
         </div>
