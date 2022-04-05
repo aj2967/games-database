@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/games-database/static/css/main.439a87b1.css",
+    "main.js": "/games-database/static/js/main.41e6a6aa.js",
+    "static/media/pacman.png": "/games-database/static/media/pacman.b8f849f00701937f4be1.png",
+    "static/media/ersbA.svg": "/games-database/static/media/ersbA.1c46ffc57aedc3cad69ef5b1c79d0b60.svg",
+    "static/media/ersbRP.svg": "/games-database/static/media/ersbRP.6f46c978fb948c782267f9c2f08faf3a.svg",
+    "static/media/ersb10.svg": "/games-database/static/media/ersb10.1d8359517a545861169c23a67352143d.svg",
+    "static/media/ersbE.svg": "/games-database/static/media/ersbE.8e05b9b62a216e6a6db72018237e40f2.svg",
+    "static/media/ersbM.svg": "/games-database/static/media/ersbM.d0de886a1cc821d39d215dec1f1470ca.svg",
+    "static/media/ersbT.svg": "/games-database/static/media/ersbT.17593ac64f0ddbc4e42dd6c11a01dfdc.svg",
+    "index.html": "/games-database/index.html",
+    "main.439a87b1.css.map": "/games-database/static/css/main.439a87b1.css.map",
+    "main.41e6a6aa.js.map": "/games-database/static/js/main.41e6a6aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.439a87b1.css",
+    "static/js/main.41e6a6aa.js"
+  ]
+}
